@@ -124,11 +124,11 @@ const loginUser = async function (req, res) {
         .status(400)
         .send({ status: false, message: "Invalid Email or Password." });
 
-    let token = jwt.sign(
-      { userId: userData._id.toString() },
-      "AAAB-Project04",
-      { expiresIn: "24h" }
-    );
+//     let token = jwt.sign(
+//       { userId: userData._id.toString() },
+//       "AAAB-Project04",
+//       { expiresIn: "24h" }
+//     );
 
     return res
       .status(200)
