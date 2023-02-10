@@ -8,11 +8,11 @@ const { authentication, authorization, reviewAuth } = require("../middleware/mid
 
 router.post("/register", userController.createUser);
 router.post("/login", userController.loginUser);
-router.post("/books", authentication, bookController.createBook);
-router.get("/books", authentication, bookController.getBooks);
-router.get("/books/:bookId", authentication, bookController.getBooksByParams);
-router.put("/books/:bookId", authentication, authorization, bookController.updateBooks);
-router.delete("/books/:bookId", authentication, authorization, bookController.deleteBookPathParam);
+router.post("/books", bookController.createBook);
+router.get("/books",  bookController.getBooks);
+router.get("/books/:bookId",  bookController.getBooksByParams);
+router.put("/books/:bookId",  bookController.updateBooks);
+router.delete("/books/:bookId",  bookController.deleteBookPathParam);
 router.post("/books/:bookId/review", reviewController.createReview);
 router.put("/books/:bookId/review/:reviewId",reviewAuth, reviewController.updateReview);
 router.delete("/books/:bookId/review/:reviewId", reviewAuth, reviewController.deleteReview);
